@@ -1,0 +1,14 @@
+# Untracked files
+
+*.swp
+*.tmp
+
+*.mysql
+*.sql
+*.gz
+*.zip
+*.tar
+*.bz2
+*.rar
+
+*config.codekit
