@@ -1,6 +1,9 @@
 {
   "name": "landing",
   "private": true,
+  "scripts": {
+    "start": "gulp serve"
+  },
   "dependencies": {
     "bootstrap-sass": "~3.3.5"
   },
