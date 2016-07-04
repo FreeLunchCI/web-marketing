@@ -1,5 +1,297 @@
-$icon-font-path: '../fonts/'
+@import './mixins'
+@import './fonts'
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss"
 // endbower
+
+// Variables
+$daintree: #011e30
+$persianGreen: #00aa9e
+$aluminium: #b4b8c2
+
+$lightGrayText: $aluminium
+$controlBorder: $daintree
+$titleColor: $daintree
+
+$btn-default-color: #fff
+$btn-default-bg: $persianGreen
+$btn-default-border: $persianGreen
+
+$museoSansRounded700: 'Museo Sans W01 Rounded 700', Arial, sans-serif
+$sofiaProRegular: 'Fofia Pro Regular', Arial, sans-serif
+
+// Common styles
+.btn-default
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
+
+body
+  font-family: $sofiaProRegular
+  font-size: 16px
+  line-height: 1.5
+  font-style: normal
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-width: 0.2px
+  -moz-osx-font-smoothing: grayscale
+
+.capture-form
+  padding: 0 45px
+  text-align: center
+
+  @include breakpoint(from-min-sm)
+    padding: 0
+
+  .capture-form-input
+    height: 50px
+    border-color: $controlBorder
+    font-size: 20px
+
+    @include breakpoint(from-min-sm)
+      width: 113%
+      margin-left: -13%
+
+  .capture-form-button
+    width: 100%
+    padding: 13px 16px
+
+    @include breakpoint(from-min-sm)
+      width: auto
+      padding: 13px 28px
+      margin-left: 4px
+
+.section-title
+  font-family: $museoSansRounded700
+  font-size: 32px
+  color: $titleColor
+  text-align: center
+
+// Specific styles
+.header
+  background: url(../images/pattern-light.jpg) repeat -100px -100px
+
+  .header-top
+    padding: 24px 0 24px 9px
+
+  .header-content
+    padding: 16px 0 39px
+
+    @include breakpoint(from-min-sm)
+      padding: 56px 0 140px
+
+  .header-content-title
+    margin-bottom: 39px
+
+    @include breakpoint(from-min-sm)
+      padding: 0 21% 0
+      margin-bottom: 48px
+
+.howto
+  padding: 43px 0
+  background: #f2f2f2
+
+  & > .container
+    & > .col-sm-4
+      & + .col-sm-4
+        .howto-item
+          margin-top: 30px
+
+  @include breakpoint(from-min-sm)
+    & > .container
+      & > .col-sm-4
+        & + .col-sm-4
+          .howto-item
+            margin-top: 0
+
+  .howto-item
+    padding: 0 40px
+    text-align: center
+
+    @include breakpoint(from-max-sm)
+      padding: 8px 50px 0
+
+    .howto-item-img
+      margin-bottom: 20px
+
+    .howto-item-text
+      font-size: 20px
+      line-height: 1.42
+      color: #b4bbc2
+
+    .howto-item-text-stress
+      color: $daintree
+
+.stories
+  padding: 73px 0
+  background: #fff
+
+  @include breakpoint(from-min-sm)
+    padding: 80px 0 62px
+
+  & > .container
+    & > .col-sm-4
+      & + .col-sm-4
+        .stories-item
+          margin-top: 40px
+
+  @include breakpoint(from-min-sm)
+    & > .container
+      & > .col-sm-4
+        & + .col-sm-4
+          .stories-item
+            margin-top: 0
+
+  .stories-title
+    margin-bottom: 39px
+
+  .stories-item
+    text-align: center
+
+  .stories-item-img
+    margin-bottom: 14px
+    border-radius: 50%
+
+  .stories-item-title
+    font-size: 20px
+    color: $daintree
+
+  .stories-item-type
+    display: inline-block
+    padding: 2px 8px
+    margin-bottom: 11px
+    font-size: 12px
+    line-height: 1
+    color: #fff
+    text-transform: uppercase
+    border-radius: 2px
+
+    &--simple
+      background: rgba(126, 119, 119, .5)
+
+    &--advanced
+      background: rgba(252, 186, 28, .5)
+
+    &--pro
+      background: rgba(255, 68, 19, .5)
+
+  .stories-item-text,
+  .stories-item-author
+    font-size: 16px
+    color: #A5A9B5
+
+  .stories-item-text
+    margin-bottom: 14px
+
+.features
+  padding: 75px 0 85px
+  background: #1a3545
+
+  @include breakpoint(from-min-sm)
+    padding: 130px 0 118px
+
+  .features-title
+    margin-bottom: 32px
+
+    @include breakpoint(from-min-sm)
+      margin-bottom: 20px
+
+  .features-list
+    padding: 0 16px
+
+    & > .col-md-4
+      .features-item
+        margin-top: 16px
+
+      &:first-child
+        .features-item
+          &:first-child
+            margin-top: 0
+
+    @include breakpoint(from-min-sm)
+      & > .col-md-4
+        .features-item
+          & + .features-item
+            margin-top: 16px
+
+        &:first-child
+          .features-item
+            &:first-child
+              margin-top: 16px
+
+      .features-item
+        box-sizing: border-box
+        height: 100px
+        padding: 16px 36px
+
+    @include breakpoint(lg)
+      .features-item
+        padding: 16px 56px
+
+  .features-item
+    display: table
+    width: 100%
+    padding: 24px 16px
+    border: 1px solid rgba(165, 169, 181, .3)
+    border-radius: 2px
+    background: rgba(1, 30, 48, .2)
+    color: #fff
+    text-align: center
+
+    .features-item-wrap
+      display: table-cell
+      vertical-align: middle
+
+  @include breakpoint(from-min-sm)
+    background: url(../images/features-bg.jpg) no-repeat center center
+    background-size: cover
+
+  .features-title
+    color: #fff
+
+.who
+  padding: 75px 0 109px
+  background: #fff
+  border-bottom: 2px solid #f2f2f2
+
+  @include breakpoint(from-min-sm)
+    padding: 75px 0 76px
+
+
+  .who-title
+    margin-bottom: 32px
+
+    @include breakpoint(from-min-sm)
+      margin-bottom: 24px
+
+  .who-text
+    font-size: 20px
+    color: $lightGrayText
+    text-align: center
+
+    @include breakpoint(from-min-sm)
+      padding: 0 222px
+
+
+.footer
+  padding: 80px 0 10px
+  background: url(../images/pattern-light.jpg) repeat -200px -200px
+
+  @include breakpoint(from-min-sm)
+    padding: 80px 0 24px
+
+  .footer-title
+    padding: 0 20px
+    margin-bottom: 40px
+
+  .footer-form
+    margin-bottom: 80px
+
+    @include breakpoint(from-min-sm)
+      margin-bottom: 120px
+
+  .footer-bottom
+    text-align: center
+    font-size: 14px
+    color: #A5A9B5
+
+  .footer-bottom-link
+    color: #00293F

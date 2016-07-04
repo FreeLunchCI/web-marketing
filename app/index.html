@@ -24,8 +24,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container-fluid">
-      <div class="header">
+    <div class="header">
+      <div class="container-fluid">
         <div class="header-top">
           <a href="#" class="header-top-logo">
             <img src="./images/header-logo.svg">
@@ -33,11 +33,14 @@
         </div>
 
         <div class="header-content">
-          <div class="header-content-title">Build, deploy and manage container based microservices in the cloud.</div>
+          <div class="header-content-title section-title">Build, deploy and manage container based microservices in the cloud.</div>
 
-          <form class="header-content-form capture-form">
-            <input type="text" class="capture-form-input" placeholder="Email Address">
-            <button class="capture-form-button">Get Beta Access</button>
+          <form class="header-content-form capture-form form-inline">
+            <div class="form-group">
+              <input type="text" class="capture-form-input form-control" placeholder="Email Address">
+            </div>
+
+            <button type="submit" class="capture-form-button btn btn-default btn-lg">Get Beta Access</button>
           </form>
         </div>
       </div>
@@ -45,20 +48,32 @@
 
     <div class="howto">
       <div class="container">
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="howto-item">
+            <div class="howto-item-img">
+              <img src="./images/github.svg">
+            </div>
+
             <div class="howto-item-text">Connect your <span class="howto-item-text-stress">GitHub</span> account</div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="howto-item">
+            <div class="howto-item-img">
+              <img src="./images/cloud.svg">
+            </div>
+
             <div class="howto-item-text">Connect your <span class="howto-item-text-stress">cloud</span> credentials</div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="howto-item">
+            <div class="howto-item-img">
+              <img src="./images/code.svg">
+            </div>
+
             <div class="howto-item-text"><span class="howto-item-text-stress">Push</span> code to repos and deploy your services</div>
           </div>
         </div>
@@ -67,9 +82,9 @@
 
     <div class="stories">
       <div class="container">
-        <div class="stories-title">User Stories</div>
+        <div class="stories-title section-title">User Stories</div>
 
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="stories-item">
             <img src="http://lorempixel.com/80/80/" class="stories-item-img">
             <div class="stories-item-title">I deployed my Rails app in the cloud</div>
@@ -79,20 +94,20 @@
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="stories-item">
             <img src="http://lorempixel.com/80/80/" class="stories-item-img">
-            <div class="stories-item-title"></div>
+            <div class="stories-item-title">Three services connected by a fourth gateway</div>
             <div class="stories-item-type stories-item-type--advanced">advanced case</div>
             <div class="stories-item-text">"I've been looking for a CI that supports our microservice strategy, I was able to get started in minutes for a fraction of our previous costs"</div>
             <div class="stories-item-author">Zachary Nevin</div>
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-sm-4">
           <div class="stories-item">
             <img src="http://lorempixel.com/80/80/" class="stories-item-img">
-            <div class="stories-item-title"></div>
+            <div class="stories-item-title">Deployment of 20+ microservices in parallel</div>
             <div class="stories-item-type stories-item-type--pro">pro case</div>
             <div class="stories-item-text">"I've been looking for a CI that supports our microservice strategy, I was able to get started in minutes for a fraction of our previous costs"</div>
             <div class="stories-item-author">Zachary Nevin</div>
@@ -103,41 +118,71 @@
 
     <div class="features">
       <div class="container">
-        <div class="features-title">Unique Features</div>
-        <div class="col-lg-4">
-          <div class="features-item">Built for Microservices</div>
-          <div class="features-item">Optimized for AWS</div>
-          <div class="features-item">Deploy with zero down time to your app</div>
-        </div>
+        <div class="features-title section-title">Unique Features</div>
 
-        <div class="col-lg-4">
-          <div class="features-item">No need to set up Kubernetes</div>
-          <div class="features-item">Support blue/green deployments with ease</div>
-          <div class="features-item">Environments in your build system handled</div>
-        </div>
+        <div class="features-list">
+          <div class="col-md-4">
+            <div class="features-item">
+              <span class="features-item-wrap">Built for Microservices</span>
+            </div>
 
-        <div class="col-lg-4">
-          <div class="features-item">Build and Deploy everytime you push to Git</div>
-          <div class="features-item">Deploy any number of services in parallel</div>
-          <div class="features-item">Shared tenancy model leads to massive cost saving</div>
+            <div class="features-item">
+              <span class="features-item-wrap">Optimized for AWS</span>
+            </div>
+
+            <div class="features-item">
+              <span class="features-item-wrap">Deploy with zero down time to your app</span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="features-item">
+              <span class="features-item-wrap">No need to set up Kubernetes</span>
+            </div>
+
+            <div class="features-item">
+              <span class="features-item-wrap">Support blue/green deployments with ease</span>
+            </div>
+
+            <div class="features-item">
+              <span class="features-item-wrap">Environments in your build system handled</span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="features-item">
+              <span class="features-item-wrap">Build and Deploy everytime you push to Git</span>
+            </div>
+
+            <div class="features-item">
+              <span class="features-item-wrap">Deploy any number of services in parallel</span>
+            </div>
+
+            <div class="features-item">
+              <span class="features-item-wrap">Shared tenancy model leads to massive cost saving</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="who">
       <div class="container">
-        <div class="who-title">Who we are</div>
+        <div class="who-title section-title">Who we are</div>
         <div class="who-text">We are a team of DevOps veterans who believe container based microservices are the future of application management and delivery. We couldn't find a CI that treated microservices as a first-class citizen, which any developer with minimal DevOps experience could easily use, so we built FreeLunchCI.</div>
       </div>
     </div>
 
     <div class="footer">
       <div class="container">
-        <div class="footer-title">Get notified about launch</div>
+        <div class="footer-title section-title">Get notified about launch</div>
 
-        <form class="footer-form capture-form">
-          <input type="text" class="capture-form-input" placeholder="Email Address">
-          <button class="capture-form-button">Get Beta Access</button>
+        <form class="footer-form capture-form form-inline">
+          <div class="form-group">
+            <input type="text" class="capture-form-input form-control" placeholder="Email Address">
+          </div>
+
+          <button type="submit" class="capture-form-button btn btn-default btn-lg">Get Beta Access</button>
         </form>
 
         <div class="footer-bottom">We would love to hear from you! <a href="mailto:somemail@mail.com" class="footer-bottom-link">Email us</a> to reach us.</div>
