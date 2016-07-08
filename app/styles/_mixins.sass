@@ -64,3 +64,51 @@
     font-style: $style
     font-weight: $weight
     src: $src
+
+@mixin custom-button-variant($color, $background, $border)
+  color: $color !important
+  background-color: $background !important
+  border-color: $border !important
+
+  &:focus,
+  &.focus
+    color: $color !important
+    background-color: darken($background, 10%) !important
+    border-color: darken($border, 25%) !important
+
+  &:hover
+    color: $color !important
+    background-color: darken($background, 10%) !important
+    border-color: darken($border, 12%) !important
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    color: $color !important
+    background-color: darken($background, 10%) !important
+    border-color: darken($border, 12%) !important
+
+    &:hover,
+    &:focus,
+    &.focus
+      color: $color !important
+      background-color: darken($background, 17%) !important
+      border-color: darken($border, 25%) !important
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle
+    background-image: none !important
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &
+    &:hover,
+    &:focus,
+    &.focus
+      background-color: $background !important
+      border-color: $border !important
+
+  .badge
+    color: $background
+    background-color: $color

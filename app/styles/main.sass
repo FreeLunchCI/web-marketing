@@ -34,29 +34,55 @@ body
   -webkit-text-stroke-width: 0.2px
   -moz-osx-font-smoothing: grayscale
 
-.capture-form
-  padding: 0 45px
-  text-align: center
-
-  @include breakpoint(from-min-sm)
-    padding: 0
-
-  .capture-form-input
-    height: 50px
-    border-color: $controlBorder
-    font-size: 20px
+// https://cdn.meme.am/instances/51621785.jpg
+.houston-container
+  .houston-form
+    box-shadow: none !important
+    font-family: $sofiaProRegular !important
+    padding: 0 45px !important
+    text-align: center !important
 
     @include breakpoint(from-min-sm)
-      width: 357px
+      padding: 0 !important
 
-  .capture-form-button
-    width: 100%
-    padding: 13px 16px
+    .houston-left,
+    .houston-right
+      display: block !important
+      width: auto !important
+      min-width: 0 !important
+      margin-bottom: 16px !important
+      vertical-align: middle !important
 
-    @include breakpoint(from-min-sm)
-      width: auto
-      padding: 13px 28px
-      margin-left: 4px
+      @include breakpoint(from-min-sm)
+        display: inline-block !important
+        margin-bottom: 0 !important
+
+    input[type='email']
+      height: 50px !important
+      border-color: $controlBorder !important
+      border-right-width: 1px !important
+      font-size: 20px !important
+      font-weight: normal !important
+      border-radius: 6px !important
+      border-bottom-width: 1px !important
+
+      @include breakpoint(from-min-sm)
+        display: block !important
+        width: 357px !important
+
+    input[type='submit']
+      height: auto !important
+      width: 100% !important
+      padding: 13px 16px !important
+      font-weight: normal !important
+      @include custom-button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
+      border-radius: 6px !important
+
+      @include breakpoint(from-min-sm)
+        display: block !important
+        width: auto !important
+        padding: 13px 28px !important
+        margin-left: 4px !important
 
 .section-title
   font-family: $museoSansRounded700
@@ -285,7 +311,7 @@ body
     padding: 0 20px
     margin-bottom: 40px
 
-  .footer-form
+  .houston-container
     margin-bottom: 80px
 
     @include breakpoint(from-min-sm)
