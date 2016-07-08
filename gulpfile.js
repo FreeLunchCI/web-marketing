@@ -3,10 +3,28 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
+var awspublish = require('gulp-awspublish');
+var path = require('path');
 const wiredep = require('wiredep').stream;
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+
+var localConfig = {
+  buildSrc: "./dist/**/*",
+  getAwsConf: function (environment) {
+    var conf = require('./aws');
+    if (!conf[environment]) {
+      throw 'No aws conf for env: ' + environment;
+    }
+    if (!conf[environment + 'Headers']) {
+      throw 'No aws headers for env: ' + environment;
+    }
+    return { keys: conf[environment], headers: conf[environment + 'Headers'] };
+  }
+};
+
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.sass')
@@ -169,6 +187,16 @@ gulp.task('wiredep', () => {
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
+
+gulp.task('publish', ['build'], function(){
+  const awsConf = localConfig.getAwsConf('production');
+  const publisher = awspublish.create(awsConf.keys);
+  return gulp.src(localConfig.buildSrc)
+    .pipe(awspublish.gzip({ ext: '' }))
+    .pipe(publisher.publish(awsConf.headers), 100)
+    .pipe(publisher.sync())
+    .pipe(awspublish.reporter());
+})
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
