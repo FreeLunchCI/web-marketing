@@ -196,7 +196,7 @@ gulp.task('publish', ['build'], function(){
     .pipe(publisher.publish(awsConf.headers), 100)
     .pipe(publisher.sync())
     .pipe(awspublish.reporter());
-})
+});
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
