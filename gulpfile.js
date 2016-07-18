@@ -12,9 +12,10 @@ const reload = browserSync.reload;
 
 
 var localConfig = {
-  buildSrc: "./dist/**/*",
+  buildSrc: './dist/**/*',
   getAwsConf: function (environment) {
-    var conf = require('./aws');
+    const conf = require('./aws');
+    
     if (!conf[environment]) {
       throw 'No aws conf for env: ' + environment;
     }
