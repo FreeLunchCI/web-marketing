@@ -3,8 +3,8 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
-var awspublish = require('gulp-awspublish');
-var path = require('path');
+const awspublish = require('gulp-awspublish');
+const path = require('path');
 const wiredep = require('wiredep').stream;
 
 const $ = gulpLoadPlugins();
@@ -191,6 +191,7 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('publish', ['build'], function(){
   const awsConf = localConfig.getAwsConf('production');
   const publisher = awspublish.create(awsConf.keys);
+
   return gulp.src(localConfig.buildSrc)
     .pipe(awspublish.gzip({ ext: '' }))
     .pipe(publisher.publish(awsConf.headers), 100)
